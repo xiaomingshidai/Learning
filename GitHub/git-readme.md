@@ -1,45 +1,63 @@
 # git使用
 
-廖雪峰的官方网站：https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
+廖雪峰的官方网站：[https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
 git有异于传统集中式分布版本控制系统，属于分布式版本控制系统
 ***
 ## 基本操作指令
+
 ```
 $ git config
 ```
+
 查看所有配置指令
+
 ```
 $ git cd D:/user
 ```
+
 进入D盘的user文件夹
+
 ```
 $ pwd
 ```
+
 查看当前目录的路径
+
 ```
 $ folder
 ```
+
 在当前目录创建folder文件夹
+
 ```
 $ touch a.txt
 ```
+
 创建a.txt文件
+
 ```
 $ rm a
 ```
+
 删除当亲目录的a文件
+
 ```
 $ rm -r a/
 ```
+
 删除a文件以及其子文件
+
 ```
 $ clone http://github.com/...
 ```
+
 克隆github的项目为本地仓库
+
 ```
 $ git init
 ```
+
 将该目录创建为仓库，会生成一个.git文件夹，该文件夹里的内容不要改动
 
 ## 把文件添加到版本库
