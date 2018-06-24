@@ -9,19 +9,30 @@
 </head>
 <body>
     <h1>v-text指令</h1>
-    <h2>v-text实例：</h2>
+    <p>v-text与差值表达式的区别</p>
+    <ol>
+        <li>v-text没有闪烁问题</li>
+        <li>插值表达式可以在前后添加任意的html代码，而v-text智能用msg覆盖掉元素内的所有值</li>
+    </ol>
+    
     <div id="app">
+        <h2>v-text实例1：</h2>
         <h3>没有绑定v-text属性：</h3>
         <p>{{ msg }}</p>
         <h3>已绑定v-text属性：</h3>
         <p v-text="msg"></p>
+        <h2>v-text实例2：</h2>
+        <h3>用插值表达式可以在前后添加任意html代码，原内容为“无敌风火轮”</h3>
+        <p>无敌风火轮{{ msg }}</p>
+        <h3>绑定v-text指令会把原来的内容覆盖，原内容为“无敌风火轮”</h3>
+        <p v-text="msg">无敌风火轮</p>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
     var app =new Vue({
         el: '#app',
         data: {
-            msg: '今天天天气不错'
+            msg: '今天天气不错'
         }
     })
 </script>

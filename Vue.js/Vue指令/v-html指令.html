@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-html</title>
+    <link rel="stylesheet" href="../../css/note.css">
+</head>
+<body>
+    <h1>v-html指令</h1>
+    <p>v-html可以将数据编译为html</p>
+    <div id="app">
+        <h2>v-html实例:</h2>
+        <p v-html="msg"></p>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app =new Vue({
+        el: '#app',
+        data: {
+            msg: '<h1>实例内容，我是编译出来的h1</h1>'
+        }
+    })
+</script>
+</body>
+</html>
