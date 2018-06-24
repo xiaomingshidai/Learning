@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-text</title>
+    <link rel="stylesheet" href="../../css/note.css">
+</head>
+<body>
+    <h1>v-text指令</h1>
+    <h2>v-text实例：</h2>
+    <div id="app">
+        <h3>没有绑定v-text属性：</h3>
+        <p>{{ msg }}</p>
+        <h3>已绑定v-text属性：</h3>
+        <p v-text="msg"></p>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app =new Vue({
+        el: '#app',
+        data: {
+            msg: '今天天天气不错'
+        }
+    })
+</script>
+</body>
+</html>
