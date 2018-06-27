@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //指定a-z范围的任意字符
+    var txt = "a1b2c3D4X5y6";
+    var reg = /[a-z]/g;
+    console.log(txt.replace(reg, "a"));
+
+    //范围可以连写
+    var reg2 = /[a-zA-Z]/g;
+    console.log(txt.replace(reg2, "*"));
+
+
+    //匹配范围的同时匹配
+    var txt = "fs13-f4ad--a";
+    var reg = /[a-z-]/g;
+    console.log(txt.replace(reg, "k"));
+</script>
+</body>
+</html>

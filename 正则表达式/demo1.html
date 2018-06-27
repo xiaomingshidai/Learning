@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //用字面量方法实例化正则表达式
+    //注意：replace不改变原变量，只是返回一个替换的值
+    var txt = "The boy is the new guy here, he said that today is a good day, and tomorrow is better!";
+    var reg = /\bis\b/g;
+    console.log(txt.replace(reg, "IS"));
+
+    var reg2 = new RegExp("\\bis\\b", "g");
+    console.log(txt.replace(reg2, 'ov'));
+
+
+    // i修饰符的作用
+    var txt2 = "He is a boy,Is he?";
+    var reg3 = /\bis\b/g;
+    console.log(txt2.replace(reg, "a"));
+
+    // var txt2 = "He is a boy,Is he?";
+    var reg4 = /\bis\b/gi;
+    console.log(txt2.replace(reg4, "a"));
+
+
+</script>
+</body>
+</html>
