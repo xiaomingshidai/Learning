@@ -2,7 +2,7 @@
 正则表达式（Regular Expression）是一门简单的语言规范。以方法的形式被用于对字符串中的信息进行查找、替换和提取操作。在JavaScript中使用正则表达式相较于等效的字符串运算有显著的性能优势。
 ## RegExp对象
 JavaScript通过内置对象RegExp支持正则表达式。  
-有两种方法实例化RegExp对象
+有两种方法实例化RegExp对象。
 * 字面量
 
 ```
