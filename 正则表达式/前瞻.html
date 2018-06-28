@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //前瞻，并不会匹配到断言部分
+    var txt = "a2*3";
+    var reg = /\w(?=\d)/g;
+    console.log(txt.replace(reg, "X"));
+</script>
+</body>
+</html>
