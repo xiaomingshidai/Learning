@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var txt = "a22c444b44cff2";
+    var reg = /\d(\w)\d/g;
+    var ret = reg.exec(txt);
+    console.log(reg.lastIndex + '\t' + ret.index + '\t' + ret.toString());
+    // console.log(ret.toString());
+</script>
+</body>
+</html>

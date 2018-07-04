@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>跑马灯特效</p>
+        <p>{{msg}}</p>
+        <input type="button" value="go" @click="go">
+        <input type="button" value="stop" @click="stop">
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: "今天天气好晴朗",
+            intervalId: null
+        },
+        methods: {
+            go(){
+                if(this.intervalId != null) return;
+                this.intervalId = setInterval(()=>{
+                    var start = this.msg.substring(0, 1);
+                    var end = this.msg.substring(1);
+                    this.msg = end + start;
+                }, 400)
+            },
+            stop(){
+                clearInterval(this.intervalId);
+                this.intervalId = null;
+            }
+        }
+    })
+</script>
+</body>
+</html>
