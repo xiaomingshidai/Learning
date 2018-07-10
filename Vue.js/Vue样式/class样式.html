@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .thin{
+            font-weight: 200;
+        }
+        .active{
+            letter-spacing: 10px;
+        }
+        .italic{
+            font-style: italic;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>第一种:数组</p>
+        <h1 :class="['red', 'thin']">{{ msg }}</h1>
+        <p>第二种:数组中使用三元表达式</p>
+        <h1 :class="['red', 'thin', isactive?'active':'']">{{ msg }}</h1>
+        <p>第三种:数组中嵌套对象</p>
+        <h1 :class="['red', 'thin', {active: isactive}]">{{ msg }}</h1>
+        <p>第四种:直接使用对象</p>
+        <h1 :class="{red:true, thin:true, italic:true}">{{ msg }}</h1>
+    </div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: '这是一个h1标签',
+            isactive: true
+        }
+    })
+</script>
+</body>
+</html>

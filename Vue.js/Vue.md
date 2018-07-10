@@ -46,12 +46,11 @@ var vm = new Vue({  //创建一个Vue实例
   ```
     v-on:click="show"
   ```
-  在Vue对象的`methods`中定义方法事件。（`methods`中定义了实例对象所有可用的方法）。  
-  可以通过事件后加`.stop`阻止冒泡（只阻止自己身上冒泡行为触发，并不会真正阻止冒泡）。如：
+  在Vue对象的`methods`中定义方法事件。（`methods`中定义了实例对象所有可用的方法）。
 
-  ```
-    @click:stop="btn"
-  ```
+
+  ## 事件修饰符  
+  * 可以通过事件后加`.stop`阻止冒泡（只阻止自己身上冒泡行为触发，并不会真正阻止冒泡）。如：`@click.stop="btn"`
 
   * `.prevent`阻止默认行为
   * `.capture`实现捕获触发事件的机制
@@ -62,3 +61,16 @@ var vm = new Vue({  //创建一个Vue实例
 在VM实例中，如果想要获取`data`上的数据，或者想要调用`methods`中的方法，通过this来访问，this就表示我们new出来的实例对象。
 
 
+## `v-model`
+* `v-bind`只能实现数据的单向的数据绑定,从M自动绑定到V，无法实现数据的双向绑定。
+* `v-model`指令，可以实现表单元素和model中数据的双向绑定。
+* 注意：`v-model`只能运用在表单元素中。
+
+## `v-for`
+1. 迭代数组
+
+    ```
+    <ul>
+      <li v-for="(item, i) in list">索引: {{ i }} --- 姓名: {{ item.name }} --- 年龄: {{ item.age }}</li>
+    </ul>
+    ```

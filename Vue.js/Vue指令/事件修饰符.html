@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .inner{
+            height: 100px;
+            background: red;
+        }
+        .outer{
+            padding: 10px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+        <p>默认正常冒泡</p>
+        <div class="inner" @click="innerClick">
+            <input type="button" value="click" @click="btnClick">
+        </div>
+
+
+        <p>.prevent修饰符</p>
+        <p><a href="http://www.baidu.com" @click.prevent="btnClick">有问题，找百度</a></p>
+
+        <p>.capture修饰符</p>
+        <div class="inner">
+            <input type="button" value="click" @click="btnClick">
+        </div>
+
+        <p>.stop修饰符</p>
+        <div class="inner" @click="innerClick">
+            <input type="button" value="click" @click="btnClick">
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: '触发事件'
+        },
+        methods: {
+            btnClick(){
+                console.log("你触发了btn事件");
+            },
+            innerClick(){
+                console.log("你触发了内层div");
+            }
+        }
+    })
+</script>
+</body>
+</html>
