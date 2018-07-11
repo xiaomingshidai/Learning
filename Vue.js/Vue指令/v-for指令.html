@@ -9,17 +9,36 @@
 </head>
 <body>
     <div id="app">
+        <p>用v-for迭代数组</p>
         <ul>
-            <li v-for="(item, i) in list">索引是{{ i }}---姓名:{{ item.name }}</li>
+            <li v-for="(item, i) in list">索引是{{ i }}---值是:{{ item }}</li>
+        </ul>
+        <p>复杂数组</p>
+        <ul>
+            <li v-for="(item, i) in list2">索引是{{ i }}---姓名是：{{ item.name }}---年龄是：{{ item.age }}</li>
+        </ul>
+        <p>迭代对象</p>
+        <ul>
+            <!-- 注意：在遍历对象的时候，有val，key还有可以有索引i值 -->
+            <li v-for="(val, key, i) in list3">值是{{ val }}，键是{{ key }}，索引是{{ i }}</li>
+        </ul>
+        <ul>
+            <li v-for="count in 10">{{ count }}</li>
         </ul>
     </div>
 <script>
     var app = new Vue({
         el: '#app',
         data: {
-            list: {
-                "name": "张三",
-                
+            list: [8, 7, 6, 5, 4, 3, 2, 1],
+            list2: [
+                {name: "张三", age: 46},
+                {name: "李四", age: 77}
+            ],
+            list3: {
+                id: 1,
+                name: "托尼·斯塔克",
+                gender: "男"
             }
         }
     })

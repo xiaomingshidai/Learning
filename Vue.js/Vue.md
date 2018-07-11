@@ -71,6 +71,44 @@ var vm = new Vue({  //创建一个Vue实例
 
     ```
     <ul>
+      <li v-for="item in list">{{ item }}</li>
+    </ul>
+    ```
+    
+
+3. 迭代对象数组
+
+    ```
+    <ul>
       <li v-for="(item, i) in list">索引: {{ i }} --- 姓名: {{ item.name }} --- 年龄: {{ item.age }}</li>
     </ul>
     ```
+
+2. 迭代对象中的属性
+  
+    ```
+    <div v-for="(val, key, i) in userInfo">{{ val }}---{{ key }}---{{ i }}</div>
+    ```
+
+4. 迭代数字
+
+    ```
+    <p v-for="count in 10">{{ count }}</p>
+    ```
+
+    注意：in后面可以放普通数组，对象数组，对象，数字。如果v-for迭代数字的话，从1开始迭代。
+
+* `v-for`循环中key属性的使用
+  * 注意：v-for循环的时候，key属性只能使用number或者string
+  * 注意：key在使用的时候，必须使用v-bind属性绑定的形式，指定key的值
+
+## `v-if`和`v-show`
+  * 特点：
+    * v-if每次都会重新创建和删除元素
+    * v-show不会进行DOM的创建和删除操作，只是切换了元素的display:none样式
+  * 消耗
+    * v-if有较高的切换性能消耗
+    * v-show有较高的初始渲染消耗
+  * 使用场景
+    * 如果元素涉及到频繁的切换，最好不要用v-if
+    * 如果元素永远不会被显示出来被用户看到，推荐使用v-if
